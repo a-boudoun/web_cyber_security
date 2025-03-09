@@ -7,7 +7,6 @@ Breach name
     ├── Flag
     ├── Resources
     │   ├── exploit_description.txt
-    │   ├── Resources.txt
     │   ├── Steps_to_reproduce.txt
     │   ├── Patch.txt
     │   ├── script.extention

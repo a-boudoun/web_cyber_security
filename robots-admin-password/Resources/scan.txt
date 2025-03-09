@@ -1,0 +1,56 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: /output/scan.txt
+START_TIME: Sun Mar  9 03:47:01 2025
+URL_BASE: http://10.12.100.119/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://10.12.100.119/ ----
+==> DIRECTORY: http://10.12.100.119/admin/
+==> DIRECTORY: http://10.12.100.119/audio/
+==> DIRECTORY: http://10.12.100.119/css/
+==> DIRECTORY: http://10.12.100.119/errors/
++ http://10.12.100.119/favicon.ico (CODE:200|SIZE:1406)
+==> DIRECTORY: http://10.12.100.119/fonts/
+==> DIRECTORY: http://10.12.100.119/images/
+==> DIRECTORY: http://10.12.100.119/includes/
++ http://10.12.100.119/index.php (CODE:200|SIZE:6892)
+==> DIRECTORY: http://10.12.100.119/js/
++ http://10.12.100.119/robots.txt (CODE:200|SIZE:53)
+==> DIRECTORY: http://10.12.100.119/whatever/
+
+---- Entering directory: http://10.12.100.119/admin/ ----
+==> DIRECTORY: http://10.12.100.119/admin/css/
+==> DIRECTORY: http://10.12.100.119/admin/fonts/
++ http://10.12.100.119/admin/index.php (CODE:200|SIZE:1432)
+
+---- Entering directory: http://10.12.100.119/audio/ ----
+
+---- Entering directory: http://10.12.100.119/css/ ----
+==> DIRECTORY: http://10.12.100.119/css/images/
+
+---- Entering directory: http://10.12.100.119/errors/ ----
+
+---- Entering directory: http://10.12.100.119/fonts/ ----
+
+---- Entering directory: http://10.12.100.119/images/ ----
+
+---- Entering directory: http://10.12.100.119/includes/ ----
+
+---- Entering directory: http://10.12.100.119/js/ ----
+
+---- Entering directory: http://10.12.100.119/whatever/ ----
++ http://10.12.100.119/whatever/htpasswd (CODE:200|SIZE:38)
+
+---- Entering directory: http://10.12.100.119/admin/css/ ----
+==> DIRECTORY: http://10.12.100.119/admin/css/images/
+
+---- Entering directory: http://10.12.100.119/admin/fonts/ ----
