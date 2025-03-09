@@ -1,3 +1,4 @@
+## patches:
 
 To prevent such exploits, developers could:
 Sign Cookies: Use a secret key to sign the cookie, ensuring that any tampering invalidates it.
