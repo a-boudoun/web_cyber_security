@@ -1,5 +1,4 @@
 
-
 in page : http://machineURL/?page=member 
 
 you will find an input field to search for a member by ID
@@ -59,5 +58,6 @@ that gives us all the column values in the second column (surname) separated by 
 
 you decrypt 5ff9d0165b4f92b14994e5c685cdce28 and you get FortyTwo
 lowering all the letters and sh256 on it and we get the flag
+
 
 
