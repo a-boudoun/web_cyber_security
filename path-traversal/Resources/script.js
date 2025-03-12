@@ -1,5 +1,5 @@
 async function testTraversal(baseUrl) {
-  const maxDepth = 20;
+  const maxDepth = 30;
 
   for (let depth = 1; depth <= maxDepth; depth++) {
     const traversal = "../".repeat(depth);
