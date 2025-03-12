@@ -28,5 +28,5 @@ async function testTraversal(baseUrl) {
   }
 }
 
-const baseUrl = "http://10.12.100.119/index.php";
+const baseUrl = "http://10.12.100.90/index.php";
 testTraversal(baseUrl);
