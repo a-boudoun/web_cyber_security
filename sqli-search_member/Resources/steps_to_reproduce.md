@@ -49,7 +49,7 @@ we send another query to the database to get all the column names for the users 
 1 union SELECT null , COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = CHAR(0x75, 0x73, 0x65, 0x72, 0x73)
 ```
 
-notice that we have encoded the users as CHAR(0x75, 0x73, 0x65, 0x72, 0x73)
+notice that we have Represented the users as CHAR(0x75, 0x73, 0x65, 0x72, 0x73)
 
 that is because whenever we use some kind of quoted input we get a database error, that is propably due the the website implementing some security michanism
 
