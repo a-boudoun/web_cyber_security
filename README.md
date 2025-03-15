@@ -1,5 +1,7 @@
 # web_cyber_security
 
+
+
 ## folder structure:
 
 ```
@@ -12,11 +14,3 @@ Breach name
     │   ├── script.extention
 
 ```
-## exploits:
-14.
-
-- [XSS]
-- [SQL Injection]
-- [brute force]
-- [cookie manipulation]
-- [hadcoded credentials]
